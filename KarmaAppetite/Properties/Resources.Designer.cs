@@ -61,12 +61,56 @@ namespace KarmaAppetite_Base.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to iVBORw0KGgoAAAANSUhEUgAAATYAAAISCAYAAABGaeMUAAAVBnpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjarZprchy7coT/YxVeAt5ALQfPCO/Ay/eXGJJH0tWNcIQvKXKGPd1ooCorKxMtd/7nv6/7L76Kz9Hl0nq1Wj1f2bLFwZvuP1/j/Q4+v9/vK9Wvd+H34y5EH9+7yKGkMz8f9Pp5Dd/Hvy74fg2Dd+WXgfr6+mD+/oHlz2vsfwz0daOkGWkK+2sg+xooxc8H4WuA8VmWr9bbr0uY5/P6df0nDPw4/bormo6V+fnsz79zI3q7cJ8U40kheX7HFD8TSPoJLg3ehPebT3iXeZ9S53dJ30slIH+Lk/9lVu7PrFj5Ofm34z/v/kjKdxYdB34PZv15/evxUP4efPdC/CtO1s+dfzteb4h/Luf7597d3b3ns7qRKyGtX4v6Xsp7x4mEPad3WeW78VN439638d0d6F2kfPvlJ98rWIik5YYcdhjh [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static System.Drawing.Bitmap Sleep___2___White {
+        internal static string Sleep___2___Red {
             get {
-                object obj = ResourceManager.GetObject("Sleep___2___White", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Sleep___2___Red", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to iVBORw0KGgoAAAANSUhEUgAAAjMAAAJcCAYAAAAM8CVNAAASM3pUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjazZlZlhu7EUT/sQovAYkZy8F4jnfg5ftGkd3WaOn56cNqqUmRxSogMzKGojv/+ud1/+BPqj65lGsrvRTPn9RTD4Mnzb/+jOe3+fT8fv7E6MP71a9ed3m93wi8FHXk641WXo/28fr7Ax+PNniWvzhRW+835tdv9PR6DO2bE70vFLUiLWG/T9TfJ4rh9Ya9TzBe2/Klt/rlFuZ5Pb4//yoD/5x+3RW6Xsvz9d63/0+V6u3MdWIIJxplOjHE8FpA1D9zcfDEnt+8w7PE8/S8EmJ/r4SC/KhO/otVuW+7cs7nwV+9/vnsm6bE8nrd8cLXxSyfjz983fKPi++eEn+Jk/V55a9et2327XY+/t27m7v3vHY3UqGk5b2pj608zziQsqf4fKzwU/mXeV6fn85Pc6B30fLtl5/8LOsWaMu1xBqG [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Sleep___2___White {
+            get {
+                return ResourceManager.GetString("Sleep___2___White", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to iVBORw0KGgoAAAANSUhEUgAAAVYAAAGGCAYAAAAgkamsAAAZ6npUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjarZprciQ5coT/4xQ6At6P4wReZrqBjq/PUWQ3e3ZmTWbaZpNFVmUmgAgPD3dkuvM//33df/GvhhZdLq3XUavnXx55ROOX7j//7P0MPr+f71+pX7+FP993/fuDyGviNX0+6PXzGr7f/zrh+zUYv5WfF1pfH8w/Pxj58xr7Xy70NVDSjCK/7K8Lja8Lpfj5IHxdwD7L8nX09nMJ83xev87/hIFvpx93xfHWPz+f/fXv3IjeLoyTYjwpJM/PmOJnAknfwSXjl/B+8gm/ZX7P/KV34tdMCMjfxcn/mJX7a1aO/3XwH+//+u0vSUlfyXK88Wcw66/Xv30/lL8Pvnsh/jFyWr9G/uP9baH+dTnf3/fu7u49n9VZroS0fi3qeynvNw4k7Dm90ypfje/C7+19Db66A72LlG+//ORrhREiabkh [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Sleep___2___Yellow {
+            get {
+                return ResourceManager.GetString("Sleep___2___Yellow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to iVBORw0KGgoAAAANSUhEUgAABVYAAAMACAIAAABAXKuVAAAH1npUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjarZdrltwqEoT/s4pZApmQPJYDJJwzO5jlz4equsdu+z48viW3kCWEICMyIgn7P/8+4V/8NNUcstVWeimRX+656+CixddvPGeJ+Tk/PyvR3ne/ux/4S8+Vcit9/i+28mrl4/77hY9WBlf2zUBtvR/M7x/0/Gq1fRno/aF0Z6Rc+Hug/h4o6euBvAcYr2XF0lv9dglzv9r3+68wtLs0Tqk+Y38O8vX/uRI9N24m1Z0kRc6a9DWBdP8kpMGFPGeecJW5zqk/d9p7JgTkZ3GK38wqfEXl8+oLKu28n34BJZVXj8CN74NZPtuf3hf7efDDE+JvvpzW+0q/v88L7etyPv7O8RbO2a/VjVwIaXkv6mOJzxUdJyFPz2uFo8ZLy0Z7j87RAuxdoONxxcmxpIsCy5EsLkOO7Kddsphi1q2VVnUB [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Sleep_Screen___Red___Flat {
+            get {
+                return ResourceManager.GetString("Sleep_Screen___Red___Flat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to iVBORw0KGgoAAAANSUhEUgAABVYAAAMACAIAAABAXKuVAAAH53pUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjarZdtluUoDkT/s4pZAgjEx3IEiHNmB7P8ufi9zKnKzprT3dV2pvHDGCNFKCSC/+ffJ/yLQ/KIoWjrddQaOcooQ4ybHl+HPdcUy3N9Dq1R370/9Qf+83MndOXPX7HXV5s++t8vfLTJuNMfJurr/WD+/GCUVyv9y0TvD+W7IuFmvyca74myvB6k9wT2MivW0duPJkx/te/3X27o1zQuuT1zf07y9XdpeG8rnVnEc8qRq2R5LSDf/xSycZOeK0+4K9yXPLjm/GEqDvnOT/GHVYWvqHzefUGln/fTL6Dk+hoR6PjZmfWz/bY/6ffOD4+Lf/hyXu87+bkfx/Sv5nz8n7N7OMdf1lmpuLS+jfow8blj4MTl+XmtcrZ4adlp7zk4e4C9C3R2XHFyrjSS8PWTStrJ0kn+tCstlljEpdGKLIC6 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Sleep_Screen___White___Flat {
+            get {
+                return ResourceManager.GetString("Sleep_Screen___White___Flat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to iVBORw0KGgoAAAANSUhEUgAABVYAAAMACAIAAABAXKuVAAAHhnpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjarZdtkiQpDkT/c4o9AgIE6Dh8CLO9wR5/H5FZtdU13WY9s51hFVBEhAC55C6C/+ffJ/yLX8qxh6KtV6s18itWLA06Pb5+47lLLM/9+WmN+h79YTzwl59eYih//hd7fbXyMf7+4KOVQU+/GOrr/WD++MDKq039m6H3RPmuKNHZb0P2NpTT64G8DYzXtmK13r5uYfqrfX//ckO/W+OW22P708j3/0vDe1sZzCl5lhy5p5xeC8j3T0IedOS584ReoV+ycdfc3yvBIT/zU/yyqvAdlc/eN1T6eT/9BkqurzcCAz86s362Px0X/bnzw+PiLzPn9e6lH8dXiu37dj7+ztk9nOOv3Y1ScWl9b+pji0+PFycuz89nlavFG5ad9l7G1QPRu0BnxxUn1xKTBCxHimwZcsSfdglLSiV5arQpLYC6 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Sleep_Screen___Yellow___Flat {
+            get {
+                return ResourceManager.GetString("Sleep_Screen___Yellow___Flat", resourceCulture);
             }
         }
     }

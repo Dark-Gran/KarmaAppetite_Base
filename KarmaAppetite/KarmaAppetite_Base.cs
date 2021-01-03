@@ -22,6 +22,7 @@ public class KarmaAppetite : PartialityMod
         patch_FoodMeter.Patch();
         patch_HardmodeStart.Patch();
         patch_LightSource.Patch();
+        patch_Menu.Patch();
         patch_OracleSwarmer.Patch();
         patch_Player.Patch();
         patch_PlayerGraphics.Patch();

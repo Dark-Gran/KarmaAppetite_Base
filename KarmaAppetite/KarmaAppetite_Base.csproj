@@ -70,6 +70,7 @@
     <Compile Include="patch_FoodMeter.cs" />
     <Compile Include="patch_HardmodeStart.cs" />
     <Compile Include="patch_LightSource.cs" />
+    <Compile Include="patch_Menu.cs" />
     <Compile Include="patch_Player.cs" />
     <Compile Include="patch_PlayerGraphics.cs" />
     <Compile Include="patch_PlayerProgression.cs" />
@@ -95,7 +96,22 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\Sleep - 2 - White.png" />
+    <EmbeddedResource Include="Resources\Sleep - 2 - Yellow.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Sleep - 2 - Red.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Sleep - 2 - White.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Sleep Screen - Red - Flat.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Sleep Screen - White - Flat.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Sleep Screen - Yellow - Flat.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
