@@ -15,7 +15,7 @@ public class patch_PlayerProgression
     {
         if (saveCurrentState && self.currentSaveState != null)
         {
-			self.currentSaveState.theGlow = KarmaAppetite_Base.GetGlow(self.currentSaveState.food, self.currentSaveState.deathPersistentSaveData.karma);
+			self.currentSaveState.theGlow = KarmaAppetite.GetGlow(self.currentSaveState.food, self.currentSaveState.deathPersistentSaveData.karma);
 		}
 		orig.Invoke(self, saveCurrentState, saveMaps, saveMiscProg);
     }

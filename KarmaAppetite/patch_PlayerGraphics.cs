@@ -14,7 +14,7 @@ public class patch_PlayerGraphics
         orig.Invoke(self, sLeaser, rCam, palette);
 		if (self.owner is Player && (self.owner as Player).Karma >= 9)
         {
-            Color c = Color.Lerp(KarmaAppetite_Base.GranOrange, Color.yellow, 0.3f);
+            Color c = Color.Lerp(KarmaAppetite.GranOrange, Color.yellow, 0.3f);
             sLeaser.sprites[9].color = Color.Lerp(c, Color.white, 0.5f);
         }
         
@@ -22,7 +22,7 @@ public class patch_PlayerGraphics
 
     private static UnityEngine.Color PlayerGraphics_SlugcatColor(On.PlayerGraphics.orig_SlugcatColor orig, int i)
     {
-        return KarmaAppetite_Base.GranOrange;
+        return KarmaAppetite.GranOrange;
     }
 
 }

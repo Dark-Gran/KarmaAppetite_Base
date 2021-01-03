@@ -178,7 +178,7 @@ public class patch_Player
 		orig.Invoke(self, add);
 		CheckPipsOverMax(self);
 		FoodToStats(self.slugcatStats, self.playerState.foodInStomach, self.Karma >= 9);
-		KarmaAppetite_Base.RefreshLight(self);
+		KarmaAppetite.RefreshLight(self);
 	}
 
 	//CARNIVORE
@@ -192,16 +192,16 @@ public class patch_Player
 
 	public static bool CanAffordPull(Player self)
 	{
-		return self.playerState.foodInStomach > 0 || self.playerState.quarterFoodPoints > 0 || self.Karma >= KarmaAppetite_Base.STARTING_MAX_KARMA;
+		return self.playerState.foodInStomach > 0 || self.playerState.quarterFoodPoints > 0 || self.Karma >= KarmaAppetite.STARTING_MAX_KARMA;
 	}
 
 	private static void SpearOnBack_SpearToBack(On.Player.SpearOnBack.orig_SpearToBack orig, Player.SpearOnBack self, Spear spr)
 	{
 		if (spr.mode == Weapon.Mode.StuckInWall)
 		{
-			if (self.owner.Karma < KarmaAppetite_Base.STARTING_MAX_KARMA)
+			if (self.owner.Karma < KarmaAppetite.STARTING_MAX_KARMA)
 			{
-				KarmaAppetite_Base.RemoveQuarterFood(self.owner);
+				KarmaAppetite.RemoveQuarterFood(self.owner);
 			}
 		}
 		orig.Invoke(self, spr);

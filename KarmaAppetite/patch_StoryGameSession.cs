@@ -25,9 +25,9 @@ public class patch_StoryGameSession
 		if (!File.Exists(saveFilePath) || !game.manager.menuSetup.LoadInitCondition) //New game
 		{
 			self.saveState.deathPersistentSaveData.theMark = true;
-			if (self.saveState.deathPersistentSaveData.karmaCap < KarmaAppetite_Base.STARTING_MAX_KARMA) 
+			if (self.saveState.deathPersistentSaveData.karmaCap < KarmaAppetite.STARTING_MAX_KARMA) 
 			{
-				self.saveState.deathPersistentSaveData.karmaCap = KarmaAppetite_Base.STARTING_MAX_KARMA;
+				self.saveState.deathPersistentSaveData.karmaCap = KarmaAppetite.STARTING_MAX_KARMA;
 			}
 			if (self.saveStateNumber != 2)
 			{

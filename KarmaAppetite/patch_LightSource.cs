@@ -12,7 +12,7 @@ public class patch_LightSource
     {
         if (tiedToObject is Player)
         {
-            color = KarmaAppetite_Base.GranOrange;
+            color = KarmaAppetite.GranOrange;
         }
         orig.Invoke(self, initPos, environmentalLight, color, tiedToObject);
     }

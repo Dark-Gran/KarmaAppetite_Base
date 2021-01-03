@@ -2,10 +2,10 @@
 using Partiality.Modloader;
 using UnityEngine;
 
-public class KarmaAppetite_Base : PartialityMod
+public class KarmaAppetite : PartialityMod
 {
 
-    public KarmaAppetite_Base()
+    public KarmaAppetite()
     {
         instance = this;
         this.ModID = "KarmaAppetite_Base";
@@ -13,7 +13,7 @@ public class KarmaAppetite_Base : PartialityMod
         this.author = "DarkGran";
     }
 
-    public static KarmaAppetite_Base instance;
+    public static KarmaAppetite instance;
 
     public override void OnEnable()
     {

@@ -13,9 +13,9 @@ public class patch_Weapon
 	{
 		if (self.mode == Weapon.Mode.StuckInWall && grasp.grabber is Player)
 		{
-			if (((Player)grasp.grabber).Karma < KarmaAppetite_Base.STARTING_MAX_KARMA)
+			if (((Player)grasp.grabber).Karma < KarmaAppetite.STARTING_MAX_KARMA)
 			{
-				KarmaAppetite_Base.RemoveQuarterFood((Player)grasp.grabber);
+				KarmaAppetite.RemoveQuarterFood((Player)grasp.grabber);
 			}
 		}
 		orig.Invoke(self, grasp);
