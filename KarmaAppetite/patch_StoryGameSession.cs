@@ -22,7 +22,7 @@ public class patch_StoryGameSession
 			".txt"
 		});
 
-		if (!File.Exists(saveFilePath) || !game.manager.menuSetup.LoadInitCondition) //New game
+		if (!File.Exists(saveFilePath) || !game.manager.menuSetup.LoadInitCondition || self.saveState.cycleNumber == 0) //New game
 		{
 			self.saveState.deathPersistentSaveData.theMark = true;
 			if (self.saveState.deathPersistentSaveData.karmaCap < KarmaAppetite.STARTING_MAX_KARMA) 
@@ -36,14 +36,14 @@ public class patch_StoryGameSession
 				{
 					self.saveState.miscWorldSaveData.privSlOracleState = new SLOrcacleState(false, saveStateNumber);
 				}
-				self.saveState.miscWorldSaveData.privSlOracleState.miscPearlCounter += 6;
-				self.saveState.miscWorldSaveData.privSlOracleState.totalPearlsBrought += 6;
-				self.saveState.miscWorldSaveData.privSlOracleState.neuronsLeft++;
-				self.saveState.miscWorldSaveData.privSlOracleState.totNeuronsGiven++;
-				self.saveState.miscWorldSaveData.privSlOracleState.neuronGiveConversationCounter++;
-				self.saveState.miscWorldSaveData.privSlOracleState.totalItemsBrought += 7;
-				self.saveState.miscWorldSaveData.privSlOracleState.playerEncountersWithMark += 6;
-				self.saveState.miscWorldSaveData.privSlOracleState.playerEncounters += 7;
+				self.saveState.miscWorldSaveData.privSlOracleState.miscPearlCounter = 6;
+				self.saveState.miscWorldSaveData.privSlOracleState.totalPearlsBrought = 6;
+				self.saveState.miscWorldSaveData.privSlOracleState.neuronsLeft = 6;
+				self.saveState.miscWorldSaveData.privSlOracleState.totNeuronsGiven = 1;
+				self.saveState.miscWorldSaveData.privSlOracleState.neuronGiveConversationCounter = 1;
+				self.saveState.miscWorldSaveData.privSlOracleState.totalItemsBrought = 7;
+				self.saveState.miscWorldSaveData.privSlOracleState.playerEncountersWithMark = 6;
+				self.saveState.miscWorldSaveData.privSlOracleState.playerEncounters = 7;
 				self.saveState.miscWorldSaveData.privSlOracleState.likesPlayer = 1f;
 				KarmaAppetite_MoonFix.FixInfluenceCap(self.saveState.miscWorldSaveData.privSlOracleState);
 			}
@@ -51,6 +51,7 @@ public class patch_StoryGameSession
 		int neuronTresh = (self.saveState.saveStateNumber != 2) ? 6 : 5;
 		int encTresh = (self.saveState.saveStateNumber != 2) ? 7 : 0;
 		KarmaAppetite_MoonFix.SetTreshholds(encTresh, neuronTresh);
+		self.lastEverMetMoon = self.saveState.miscWorldSaveData.privSlOracleState != null && self.saveState.miscWorldSaveData.privSlOracleState.playerEncounters > encTresh;
 		patch_Player.KarmaToFood(self.characterStats, self.saveState.deathPersistentSaveData.karma);
 		patch_Player.FoodToStats(self.characterStats, self.saveState.food, self.saveState.deathPersistentSaveData.karma >= 9);
 	}
