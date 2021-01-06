@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using RWCustom;
 using UnityEngine;
 
@@ -18,44 +17,11 @@ public class patch_Player
 		On.Player.SpearOnBack.SpearToBack += SpearOnBack_SpearToBack;
 	}
 
-    //SLUGCAT STATS
-
-    public static void FoodToStats(SlugcatStats self, int food, bool extraStats)
-	{
-
-		if (!self.malnourished)
-		{
-			self.throwingSkill = (food > 0) ? 2 : 0;
-
-			float statBonus = food * ((extraStats) ? 0.08f : 0.04f);
-
-			const float STAT_BASE = 0.88f; //1f - (extraStats * food_potential)
-			self.runspeedFac = STAT_BASE - 0.05f + statBonus;
-			self.poleClimbSpeedFac = STAT_BASE + statBonus;
-			self.corridorClimbSpeedFac = STAT_BASE + statBonus;
-			self.lungsFac = STAT_BASE + statBonus;
-
-			self.generalVisibilityBonus = 0f + statBonus / 10;
-			self.loudnessFac = 1.45f - statBonus / 2;
-			self.visualStealthInSneakMode = 0.11f + statBonus / 2;
-			self.bodyWeightFac -= statBonus / 2;
-		}
-		else
-		{
-			self.throwingSkill = 0;
-
-			self.loudnessFac = 1.4f;
-			self.generalVisibilityBonus = -0.1f;
-			self.visualStealthInSneakMode = 0.3f;
-		}
-
-	}
-
 	//STRENGTH
 
 	private static void Player_ThrownSpear(On.Player.orig_ThrownSpear orig, Player self, Spear spear)
 	{
-		spear.spearDamageBonus = 0.25f + ((self.playerState.foodInStomach / (FOOD_POTENTIAL / 10)) * ((self.Karma >= 9) ? 1f : 0.5f));
+		spear.spearDamageBonus = 0.25f + ((self.playerState.foodInStomach / (KarmaAppetite.FOOD_POTENTIAL / 10)) * ((self.Karma >= 9) ? 1f : 0.5f));
 		BodyChunk firstChunk2 = spear.firstChunk;
 		float speedBoost = 0.73f + (self.playerState.foodInStomach / 10);
 		if (speedBoost < 1f && self.playerState.foodInStomach > 0) { speedBoost = 1f; }
@@ -63,42 +29,6 @@ public class patch_Player
 	}
 
 	//APPETITE
-
-	public static int FOOD_POTENTIAL = 14;
-
-	public static IntVector2 GetFoodFromKarma(int karma)
-	{
-		switch (karma + 1)
-		{
-			case 1:
-			default:
-				return new IntVector2(3, 3);
-			case 2:
-				return new IntVector2(4, 4);
-			case 3:
-				return new IntVector2(5, 4);
-			case 4:
-				return new IntVector2(6, 5);
-			case 5:
-				return new IntVector2(7, 6);
-			case 6:
-				return new IntVector2(9, 7);
-			case 7:
-				return new IntVector2(10, 8);
-			case 8:
-				return new IntVector2(11, 9);
-			case 9:
-				return new IntVector2(12, 10);
-			case 10:
-				return new IntVector2(FOOD_POTENTIAL, 11);
-		}
-	}
-
-	public static void KarmaToFood(SlugcatStats self, int karma)
-	{
-		self.maxFood = GetFoodFromKarma(karma).x;
-		self.foodToHibernate = GetFoodFromKarma(karma).y;
-	}
 
 	private static void CheckPipsOverMax(Player self)
 	{
@@ -111,8 +41,8 @@ public class patch_Player
 	private static void Player_SetMalnourished(On.Player.orig_SetMalnourished orig, Player self, bool m)
 	{
 		orig.Invoke(self, m);
-		KarmaToFood(self.slugcatStats, self.Karma);
-		FoodToStats(self.slugcatStats, self.playerState.foodInStomach, self.Karma >= 9);
+		KarmaAppetite.KarmaToFood(self.slugcatStats, self.Karma);
+		KarmaAppetite.FoodToStats(self.slugcatStats, self.playerState.foodInStomach, self.Karma >= 9);
 	}
 
 	private static bool Player_ObjectCountsAsFood(On.Player.orig_ObjectCountsAsFood orig, Player self, PhysicalObject obj)
@@ -177,7 +107,7 @@ public class patch_Player
 	{
 		orig.Invoke(self, add);
 		CheckPipsOverMax(self);
-		FoodToStats(self.slugcatStats, self.playerState.foodInStomach, self.Karma >= 9);
+		KarmaAppetite.FoodToStats(self.slugcatStats, self.playerState.foodInStomach, self.Karma >= 9);
 		KarmaAppetite.RefreshLight(self);
 	}
 

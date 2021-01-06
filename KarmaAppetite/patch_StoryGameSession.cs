@@ -52,8 +52,8 @@ public class patch_StoryGameSession
 		int encTresh = (self.saveState.saveStateNumber != 2) ? 7 : 0;
 		KarmaAppetite_MoonFix.SetTreshholds(encTresh, neuronTresh);
 		self.lastEverMetMoon = self.saveState.miscWorldSaveData.privSlOracleState != null && self.saveState.miscWorldSaveData.privSlOracleState.playerEncounters > encTresh;
-		patch_Player.KarmaToFood(self.characterStats, self.saveState.deathPersistentSaveData.karma);
-		patch_Player.FoodToStats(self.characterStats, self.saveState.food, self.saveState.deathPersistentSaveData.karma >= 9);
+		KarmaAppetite.KarmaToFood(self.characterStats, self.saveState.deathPersistentSaveData.karma);
+		KarmaAppetite.FoodToStats(self.characterStats, self.saveState.food, self.saveState.deathPersistentSaveData.karma >= 9);
 	}
 
 }

@@ -16,8 +16,8 @@ public class patch_FoodMeter
 	{
 		if (hud.owner is SlugcatSelectMenu.SlugcatPageContinue)
 		{
-			maxFood = patch_Player.GetFoodFromKarma(((SlugcatSelectMenu.SlugcatPageContinue)hud.owner).saveGameData.karma).x;
-			survivalLimit = patch_Player.GetFoodFromKarma(((SlugcatSelectMenu.SlugcatPageContinue)hud.owner).saveGameData.karma).y;
+			maxFood = KarmaAppetite.GetFoodFromKarma(((SlugcatSelectMenu.SlugcatPageContinue)hud.owner).saveGameData.karma).x;
+			survivalLimit = KarmaAppetite.GetFoodFromKarma(((SlugcatSelectMenu.SlugcatPageContinue)hud.owner).saveGameData.karma).y;
 		}
 		orig.Invoke(self, hud, maxFood, survivalLimit);
 		if (hud.owner is Player && (hud.owner as Player).slugcatStats.name != SlugcatStats.Name.Red)
