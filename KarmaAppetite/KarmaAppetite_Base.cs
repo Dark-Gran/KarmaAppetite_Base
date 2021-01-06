@@ -48,7 +48,7 @@ public class KarmaAppetite : PartialityMod
             if (ac.realizedCreature != null && ac.realizedCreature is Player)
             {
                 Player player = ac.realizedCreature as Player;
-                KarmaToFood(player.slugcatStats, player.Karma);
+                KarmaToFood(player.slugcatStats, player.Karma); //does not refresh the FoodMeter
                 FoodToStats(player.slugcatStats, player.CurrentFood, player.Karma >= 9);
                 KarmaAppetite.RefreshLight(player);
             }
